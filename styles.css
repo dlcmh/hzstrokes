@@ -31,4 +31,15 @@ form {
 .character-wrapper {
   width: 100px;
   height: 100px;
+  position: relative;
+  background-image: 
+    /* Diagonal lines */
+    linear-gradient(135deg, transparent 49.5%, #e0e0e0 49.5%, #e0e0e0 50.5%, transparent 50.5%),
+    linear-gradient(45deg, transparent 49.5%, #e0e0e0 49.5%, #e0e0e0 50.5%, transparent 50.5%),
+    /* Horizontal line */
+    linear-gradient(to right, transparent 49.5%, #e0e0e0 49.5%, #e0e0e0 50.5%, transparent 50.5%),
+    /* Vertical line */
+    linear-gradient(to bottom, transparent 49.5%, #e0e0e0 49.5%, #e0e0e0 50.5%, transparent 50.5%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
 }
