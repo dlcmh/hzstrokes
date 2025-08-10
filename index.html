@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chinese Character Stroke Animation</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Chinese Character Stroke Animation</h1>
-    <form id="character-form">
-      <label for="character-input">Enter Chinese characters:</label>
-      <input type="text" id="character-input" required>
-      <button type="submit">Animate</button>
-    </form>
-    <div id="characters-container"></div>
-  </div>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- HanziWriter is loaded before our script -->
   <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@2.0.2/dist/hanzi-writer.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl text-center">
+    <h1 class="text-2xl md:text-3xl font-bold mb-4">Chinese Character Stroke Animation</h1>
+    <form id="character-form" class="mb-6">
+      <label for="character-input" class="block mb-2 text-left">Enter Chinese characters:</label>
+      <div class="flex gap-2">
+        <input
+          type="text"
+          id="character-input"
+          required
+          class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          type="submit"
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Animate
+        </button>
+      </div>
+    </form>
+    <div id="characters-container" class="flex flex-wrap justify-center gap-4 mt-4"></div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
