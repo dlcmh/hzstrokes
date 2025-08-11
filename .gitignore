@@ -34,7 +34,3 @@ yarn-error.log*
 # Package lock files
 package-lock.json
 yarn.lock
-
-# Fonts (ignore all except those we specifically want to track)
-fonts/*
-!fonts/ZhiMangXing-Regular.ttf
