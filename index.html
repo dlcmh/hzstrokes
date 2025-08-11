@@ -8,6 +8,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-san-calligraphy.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-san-calligraphy-16.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Kaiti font (Zhi Mang Xing) for calligraphy style -->
+  <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <!-- Noto Serif SC font as an alternative -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .font-kaiti {
+      font-family: 'Zhi Mang Xing', cursive;
+    }
+    .font-noto {
+      font-family: 'Noto Serif SC', serif;
+    }
+  </style>
   <!-- HanziWriter is loaded before our script -->
   <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@2.0.2/dist/hanzi-writer.min.js"></script>
 </head>
@@ -31,8 +43,12 @@
           Animate
         </button>
       </div>
+      <!-- Line 1: Using Noto Serif SC font -->
+      <div id="mirror-display-1" class="mt-4 text-2xl font-noto text-left hidden"></div>
+      <!-- Line 2: Using Zhi Mang Xing (Kaiti-style) font -->
+      <div id="mirror-display-2" class="mt-4 text-2xl font-kaiti text-left hidden"></div>
     </form>
-    <div id="characters-container" class="flex flex-wrap justify-center gap-4 mt-4"></div>
+    <div id="characters-container" class="flex flex-wrap justify-start gap-4 mt-4"></div>
   </div>
   <script src="script.js"></script>
 </body>

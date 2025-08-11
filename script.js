@@ -1,3 +1,20 @@
+// Add real-time mirroring of input
+document.getElementById('character-input').addEventListener('input', function () {
+  const mirrorDisplay1 = document.getElementById('mirror-display-1');
+  const mirrorDisplay2 = document.getElementById('mirror-display-2');
+  const inputValue = this.value.trim();
+  
+  if (inputValue.length > 0) {
+    mirrorDisplay1.textContent = inputValue;
+    mirrorDisplay2.textContent = inputValue;
+    mirrorDisplay1.classList.remove('hidden');
+    mirrorDisplay2.classList.remove('hidden');
+  } else {
+    mirrorDisplay1.classList.add('hidden');
+    mirrorDisplay2.classList.add('hidden');
+  }
+});
+
 document.getElementById('character-form').addEventListener('submit', function (event) {
   event.preventDefault(); // Prevent form submission
 
