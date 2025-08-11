@@ -15,11 +15,11 @@ document.getElementById('character-form').addEventListener('submit', function (e
       const charWrapper = document.createElement('div');
       // w-24 h-24 sets a base responsive size (6rem * 16px = 96px)
       // aspect-square ensures it stays square
-      // border border-gray-300 adds a border
+      // border border-red-300 adds a border
       // rounded-lg gives it rounded corners
       // relative is needed for absolute positioning of children
       // grid grid-cols-1 grid-rows-1 places children in the same cell
-      charWrapper.className = 'w-24 h-24 aspect-square border border-gray-300 rounded-lg relative grid grid-cols-1 grid-rows-1';
+      charWrapper.className = 'w-24 h-24 aspect-square border border-red-300 rounded-lg relative grid grid-cols-1 grid-rows-1';
       charWrapper.id = `character-${index}-wrapper`; // Give wrapper a new ID
       charactersContainer.appendChild(charWrapper);
 
@@ -50,7 +50,7 @@ document.getElementById('character-form').addEventListener('submit', function (e
       svg.setAttribute("viewBox", `0 0 ${size} ${size}`); // Set viewBox for correct scaling
 
       // Style for all lines
-      const lineStyle = "stroke:#e5e7eb;stroke-width:0.5"; // Tailwind gray-200
+      const lineStyle = "stroke:#fecaca;stroke-width:0.5"; // Tailwind red-200
 
       const center = size / 2;
       // Create lines: Horizontal, Vertical, Diagonal 1, Diagonal 2
