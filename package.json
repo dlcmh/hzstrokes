@@ -1,0 +1,21 @@
+{
+  "name": "hzstrokes",
+  "version": "1.0.0",
+  "description": "A tool to generate favicon files from Chinese characters",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-favicons": "node generate-favicons.js"
+  },
+  "keywords": [
+    "favicon",
+    "chinese",
+    "character",
+    "generator"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^3.1.2"
+  }
+}
