@@ -11,14 +11,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Kaiti font (Zhi Mang Xing) for calligraphy style -->
   <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
-  <!-- Noto Serif SC font as an alternative -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'SimKai';
+      src: url('fonts/simkai.ttf') format('truetype');
+    }
     .font-kaiti {
       font-family: 'Zhi Mang Xing', cursive;
     }
-    .font-noto {
-      font-family: 'Noto Serif SC', serif;
+    .font-simkai {
+      font-family: 'SimKai', 'KaiTi', serif;
     }
   </style>
   <!-- HanziWriter is loaded before our script -->
@@ -44,8 +46,8 @@
           Animate
         </button>
       </div>
-      <!-- Line 1: Using Noto Serif SC font -->
-      <div id="mirror-display-1" class="mt-4 text-2xl font-noto text-left hidden"></div>
+      <!-- Line 1: Using SimKai font -->
+      <div id="mirror-display-1" class="mt-4 text-2xl font-simkai text-left hidden"></div>
       <!-- Line 2: Using Zhi Mang Xing (Kaiti-style) font -->
       <div id="mirror-display-2" class="mt-4 text-2xl font-kaiti text-left hidden"></div>
     </form>
