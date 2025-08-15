@@ -15,10 +15,8 @@ document.getElementById('character-input').addEventListener('input', function ()
   }
 });
 
-document.getElementById('character-form').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent form submission
-
-  const characterInput = document.getElementById('character-input').value.trim();
+// Function to trigger animation
+function triggerAnimation(characterInput) {
   const charactersContainer = document.getElementById('characters-container');
 
   // Clear previous characters
@@ -106,5 +104,47 @@ document.getElementById('character-form').addEventListener('submit', function (e
     });
   } else {
     alert('Please enter at least one Chinese character.');
+  }
+}
+
+// Handle form submission
+document.getElementById('character-form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form submission
+
+  const characterInput = document.getElementById('character-input').value.trim();
+  
+  // Update URL with the current text
+  const url = new URL(window.location);
+  url.searchParams.set('text', characterInput);
+  window.history.replaceState({}, '', url);
+
+  triggerAnimation(characterInput);
+});
+
+// Check for 'text' query parameter on page load
+document.addEventListener('DOMContentLoaded', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const textParam = urlParams.get('text');
+
+  if (textParam) {
+    // Populate the input field
+    document.getElementById('character-input').value = textParam;
+    
+    // Trigger the animation
+    triggerAnimation(textParam);
+    
+    // Update the mirror displays
+    const mirrorDisplay1 = document.getElementById('mirror-display-1');
+    const mirrorDisplay2 = document.getElementById('mirror-display-2');
+    
+    if (textParam.length > 0) {
+      mirrorDisplay1.textContent = textParam;
+      mirrorDisplay2.textContent = textParam;
+      mirrorDisplay1.classList.remove('hidden');
+      mirrorDisplay2.classList.remove('hidden');
+    } else {
+      mirrorDisplay1.classList.add('hidden');
+      mirrorDisplay2.classList.add('hidden');
+    }
   }
 });
